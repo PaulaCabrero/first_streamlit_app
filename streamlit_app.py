@@ -57,7 +57,7 @@ if streamlit.button('Get_fruit_load_list'):
   streamlit.dataframe(my_data_rows)
 
 # no se ejecuta nada a partir de aquí hasta que lo arreglemos
-streamlit.stop()
+#streamlit.stop()
 
 # permitimos que el usuario meta nuevas frutas en la lista
 def insert_row_snowflake(new_fruit):
