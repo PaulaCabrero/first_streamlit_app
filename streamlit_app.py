@@ -30,15 +30,13 @@ try:
   if not fruit_choice:
     streamlit.error('Please select a fruit to get information.')
   else
-    #import requests   se ha movido arriba
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-    #streamlit.text(fruityvice_response.json()) # importa el json
-    # coge el fichero json lo carga y normaliza
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-    # mete los datos anteriores en una tabla
     streamlit.dataframe(fruityvice_normalized)
+
 except URLError as e:
   streamlit.error()
+  
 # no ejecute  nada a partir de aquí hasta que lo arreglemos
 streamlit.stop()
 
