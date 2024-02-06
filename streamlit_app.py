@@ -42,9 +42,6 @@ try:
 except URLError as e:
   streamlit.error()
   
-# no ejecute  nada a partir de aquí hasta que lo arreglemos
-streamlit.stop()
-
 streamlit.header("The fruit load list contains:")
 
 #snowflake related functions COSAS NUEVAS
@@ -62,4 +59,6 @@ if streamlit.button('Get_fruit_load_list'):
 fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfruit')
 streamlit.write('Thanks for adding ', fruit_choice)
 
+# no se ejecuta nada a partir de aquí hasta que lo arreglemos
+streamlit.stop()
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
